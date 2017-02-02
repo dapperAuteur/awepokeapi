@@ -15,22 +15,34 @@
 		<!-- Latest compiled and minified JavaScript -->
 	</head>
 	<body>
-		<div>
+		<div class="container">
 			<div class="banner_div">
 				<h1>The Poke Games</h1>
 			</div>
-			<div id="field_of_play">
-					<h1 id="pokemon_name">Field Of Play</h1>
-			</div>
-			<br/>
-			<br/>
-			<br/>
-			<div class="container">
-				<button id="start_button">
-					Start Game!
-				</button>
+			<div class="row">
+				<div id="field_of_play" class="col-lg-4 col-md-4">
+					<h1 id="pokemon_choices">Field Of Play</h1>
+					<h2 id="pokemon_weight"></h2>
+					<h2 id="pokemon_height"></h2>
+					<h2 id="pokemon_base_experience"></h2>
+					<h2 id="pokemon_species"></h2>
+				</div>
+				
 
+				<div id="menu_of_game" class="col-lg-4 col-md-4">
+					<h2>Choose Your Pokemon</h2>
+					<input id="userInput" type="text" />
+
+					<div>
+						<h1 id="pokemon_name">test</h1>
+					</div>
+					<button id="start_button">
+						Start Game!
+					</button>
+
+				</div>
 			</div>
+			
 		</div>
     
 

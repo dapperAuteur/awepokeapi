@@ -16,5 +16,18 @@
 	width: 50%;
 	position: relative;
 	top: 10px;
-	left: 50px;
+	margin-right: 10px;
+/*	left: 50px;*/
+/*	background-image: url(./../sprites/pokemon/721.png);*/
+}
+
+#menu_of_game {
+	background: rgba(1,5,225,1.00);
+	position: relative;
+	top: 10px;
+	
+}
+
+#show_sprite {
+	background-image: url(./../sprites/pokemon/721.png);
 }
