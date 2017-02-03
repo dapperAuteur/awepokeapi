@@ -1,5 +1,5 @@
 .banner_div{
-    background-image: url(./../img/pokeOlympics1.png);
+    background-image: url(../img/pokeOlympics1.png);
     width: 100%;
 	height: 100%;
     background-size: contain;
@@ -11,10 +11,10 @@
 }
 
 #field_of_play {
+	position: relative;
 	background: green;
 	height: 30em;
 	width: 50%;
-	position: relative;
 	top: 10px;
 	margin-right: 10px;
 /*	left: 50px;*/
@@ -22,12 +22,14 @@
 }
 
 #menu_of_game {
+	position: relative;
 	background: rgba(1,5,225,1.00);
 	position: relative;
+	height: 30em;
 	top: 10px;
 	
 }
 
 #show_sprite {
-	background-image: url(./../sprites/pokemon/721.png);
+	background-image: url(../sprites/pokemon/721.png);
 }
