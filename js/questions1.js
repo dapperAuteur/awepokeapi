@@ -14,34 +14,60 @@ function strict() {
 			let player1 = "player_1";
 			let playerScore = 100;
 			let randomPoke;
-			let pokeTraits = ["weight", "height", "species.name", "base_experience"];
-			console.log(input + " " + player1 + "\'s score is: " + playerScore + " " + inputTitle);
-
+			let arrDummyPoke = [];
+			let arrDummyPokeNum = [];
+			let pokeURL = "https://pokeapi.co/api/v2/pokemon/";
+			let pokeTraits = function(name, weight, height, speciesName, baseExperience) {
+				this.name = name;
+				this.weight = weight;
+				this.height = height;
+				this.speciesName = speciesName;
+				this.baseExperience = baseExperience;
+//				console.log("pokeTraits are: name " + pokeTraits.name + " weight: " + pokeTraits.weight + " height: " + pokeTraits.height+ " speciesName: " + pokeTraits.speciesName+ " baseExperience: " + pokeTraits.baseExperience);
+			};
+			let pokemon = new pokeTraits();
+			
 			//create cookie to store user score
 			//$.cookie("player1", 0);
 			
 			
 
 			//create an array of random pokemon to test user's knowledge
-			let arrDummyPoke = [];
+			
 			for(let i = 0; i < 4; i++) {
 				randomPoke = Math.floor( Math.random() * 721 );
-				arrDummyPoke[i] = [randomPoke];
-				console.log(arrDummyPoke[i]);
-				console.log(pokeTraits[i]);
-				for(let j = 0; j < pokeTraits.length; j++) {
+				arrDummyPokeNum[i] = randomPoke;
+				$.ajax({
+				method:"GET",
+				url: pokeURL + arrDummyPokeNum[i] + "/",
+				success: function(data) {
+					console.log("line 44 will print random pokemon object in loop ");
+					console.log(data);
+					pokemon(data.name, data.weight, data.height, data.speciesName, data.baseExperience);
+					console.log("line 47 will print random construction of pokemon in loop ");
+					console.log(pokemon);
+					arrDummyPoke[i] = pokemon;
+					console.log("line 50 will print random construction of pokemon in loop for arrDummyPoke[" + i + "] ");
 					console.log(arrDummyPoke[i]);
-					console.log(pokeTraits[j]);
-					arrDummyPoke[i][j+1] = pokeTraits[j];
+					console.log("line 52 will print random number of pokemon in loop for arrDummyPokeNum[" + i + "] ");
+					console.log(arrDummyPokeNum[i]);
+//					$("#pokemon_chosen").html(inputTitle);
+//					$("#pokemon_choices").html(inputTitle);
+//					$("#player_score").html(playerScore);
+
 				}
+			});
+				
 			}
-			console.log(arrDummyPoke);
+//			console.log("line 58 will print arr of construction of pokemon arrDummyPoke[]" + arrDummyPoke[]);
+//			console.log("line 58 will print arr of construction of pokemon arrDummyPoke[]" + arrDummyPokeNum[]);
 
 			//grab data from api about user's chosen pokemon
 			$.ajax({
 				method:"GET",
 				url: "https://pokeapi.co/api/v2/pokemon/" + input + "/",
 				success: function(data) {
+					console.log("prints user chosen pokemon data ");
 					console.log(data);
 					$("#pokemon_chosen").html(inputTitle);
 					$("#pokemon_choices").html(inputTitle);
@@ -50,17 +76,21 @@ function strict() {
 				}
 			});
 			
-			//refactor to a for loop
 			for(let i = 0; i < arrDummyPoke.length; i++) {
-				$.ajax({
-					method:"GET",
-					url: "//pokeapi.co/api/v2/pokemon/" + arrDummyPoke[i] + "/",
-					success: function(data) {
-						console.log(data);
-						$("#pokemon_" + i).html(data.name);
-					}
-				});
+				$("#pokemon_" + i).html(arrDummyPoke[i]);
 			}
+			
+			//refactor to a for loop
+//			for(let i = 0; i < arrDummyPoke.length; i++) {
+//				$.ajax({
+//					method:"GET",
+//					url: "//pokeapi.co/api/v2/pokemon/" + arrDummyPoke[i] + "/",
+//					success: function(data) {
+//						console.log(data);
+//						$("#pokemon_" + i).html(data.name);
+//					}
+//				});
+//			}
 //
 //			//refactor to a for loop
 //			for(let i = 0; i < arrDummyPoke.length; i++) {
