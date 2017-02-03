@@ -13,6 +13,7 @@
 #field_of_play {
 	position: relative;
 	background: green;
+	color: #fff;
 	height: 30em;
 	width: 50%;
 	top: 10px;
@@ -24,7 +25,7 @@
 #menu_of_game {
 	position: relative;
 	background: rgba(1,5,225,1.00);
-	position: relative;
+	color: #fff;
 	height: 30em;
 	top: 10px;
 	
@@ -32,4 +33,12 @@
 
 #show_sprite {
 	background-image: url(../sprites/pokemon/721.png);
+}
+
+#start_button {
+	color: #000;
+}
+
+#userInput {
+	color: #000;
 }
