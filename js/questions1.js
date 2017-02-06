@@ -59,6 +59,14 @@ function strict() {
 			});
 				
 			}
+			console.log(arrDummyPoke[0]);
+			console.log(arrDummyPoke[1]);
+			console.log(arrDummyPoke[2]);
+			console.log(arrDummyPoke[3]);
+			console.log(arrDummyPokeNum[0]);
+			console.log(arrDummyPokeNum[1]);
+			console.log(arrDummyPokeNum[2]);
+			console.log(arrDummyPokeNum[3]);
 //			console.log("line 58 will print arr of construction of pokemon arrDummyPoke[]" + arrDummyPoke[]);
 //			console.log("line 58 will print arr of construction of pokemon arrDummyPoke[]" + arrDummyPokeNum[]);
 
